@@ -1,6 +1,7 @@
 const ROW_ITEMS_CLASS = ".d2l-rowshadeonhover-selected-static";
 const RADIO_CLASS = ".d2l-radio";
 const MATCH_CLASS = ".ds_d";
+const CHECKBOX_CLASS = ".d2l-checkbox";
 
 // hides the blue background behind selected answers
 function hideBlueBG() {
@@ -24,10 +25,17 @@ function hideMatchAnswers() {
     });
 }
 
+function uncheckCheckboxes() {
+    document.querySelectorAll(CHECKBOX_CLASS).forEach((elem) => {
+        elem.style.background = "none";
+    })
+}
+
 function hideAnswers() {
     hideBlueBG();
     uncheckRadio();
     hideMatchAnswers();
+    uncheckCheckboxes();
 }
 
 console.log("Brightspace Quiz Review is active.");
