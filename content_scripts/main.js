@@ -3,6 +3,8 @@ const RADIO_CLASS = ".d2l-radio";
 const MATCH_CLASS = ".ds_d";
 const CHECKBOX_CLASS = ".d2l-checkbox";
 const FEEDBACK_CLASS = ".d2l-hpg-opener";
+const ICON_CLASS = "d2l-icon";
+const ICON_CHECK = "tier1:check";
 const LABEL_ELEMENT = "label";
 const TR_ELEMENT = "tr";
 
@@ -49,6 +51,14 @@ function hideAnswerLabel() {
     })
 }
 
+function hideCheckmarks() {
+    document.querySelectorAll(ICON_CLASS).forEach((elem) => {
+        if(elem.getAttribute("icon") === ICON_CHECK) {
+            elem.remove();
+        }
+    })
+}
+
 function hideAnswers() {
     hideBlueBG();
     uncheckRadio();
@@ -56,6 +66,7 @@ function hideAnswers() {
     uncheckCheckboxes();
     hideFeedback();
     hideAnswerLabel();
+    hideCheckmarks();
 }
 
 console.log("Brightspace Quiz Review is active.");
