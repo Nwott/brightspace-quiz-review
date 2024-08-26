@@ -69,10 +69,17 @@ function hideAnswers() {
     hideCheckmarks();
 }
 
+function showAnswers() {
+    window.location.reload();
+}
+
 console.log("Brightspace Quiz Review is active.");
 
 browser.runtime.onMessage.addListener((message) => {
     if(message.command === "hide-answers") {
         hideAnswers();
+    }
+    else if(message.command === "show-answers") {
+        showAnswers();
     }
 });
