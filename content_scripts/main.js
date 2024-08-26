@@ -3,6 +3,8 @@ const RADIO_CLASS = ".d2l-radio";
 const MATCH_CLASS = ".ds_d";
 const CHECKBOX_CLASS = ".d2l-checkbox";
 const FEEDBACK_CLASS = ".d2l-hpg-opener";
+const LABEL_ELEMENT = "label";
+const TR_ELEMENT = "tr";
 
 // hides the blue background behind selected answers
 function hideBlueBG() {
@@ -39,12 +41,21 @@ function hideFeedback() {
     });
 }
 
+function hideAnswerLabel() {
+    document.querySelectorAll(LABEL_ELEMENT).forEach((elem) => {
+        if(elem.innerText === "Answer:") {
+            elem.closest(TR_ELEMENT).remove();
+        }
+    })
+}
+
 function hideAnswers() {
     hideBlueBG();
     uncheckRadio();
     hideMatchAnswers();
     uncheckCheckboxes();
     hideFeedback();
+    hideAnswerLabel();
 }
 
 console.log("Brightspace Quiz Review is active.");
