@@ -8,6 +8,14 @@ const ICON_CHECK = "tier1:check";
 const LABEL_ELEMENT = "label";
 const TR_ELEMENT = "tr";
 
+let active = false;
+
+// if this page is not a completed quiz, then don't allow anything to happen from this extension
+let title = document.querySelector("#z_e").innerText;
+if(title.substr(title.length - 9) === "- Results") {
+    active = true; 
+}
+
 // hides the blue background behind selected answers
 function hideBlueBG() {
     // get all answers
@@ -73,13 +81,15 @@ function showAnswers() {
     window.location.reload();
 }
 
-console.log("Brightspace Quiz Review is active.");
+if(active === true) {
+    console.log("Brightspace Quiz Review is active.");
 
-browser.runtime.onMessage.addListener((message) => {
-    if(message.command === "hide-answers") {
-        hideAnswers();
-    }
-    else if(message.command === "show-answers") {
-        showAnswers();
-    }
-});
+    browser.runtime.onMessage.addListener((message) => {
+        if(message.command === "hide-answers") {
+            hideAnswers();
+        }
+        else if(message.command === "show-answers") {
+            showAnswers();
+        }
+    });
+}
