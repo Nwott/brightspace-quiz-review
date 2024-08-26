@@ -4,4 +4,29 @@
 
 #popup-content {
     text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+
+#popup-content h1 {
+    font-size: 30px;
+}
+
+#popup-content button {
+    color: #6b43ac;
+    background: white;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    border: 1px #9b9b9b solid;
+}
+
+#popup-content button:hover {
+    background: #e2e2e2;    
+}
+
+#popup-content button:active {
+    background: #c7c7c7;    
 }
