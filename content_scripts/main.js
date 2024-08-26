@@ -9,13 +9,13 @@ function hideBlueBG() {
 }
 
 function hideAnswers() {
-    console.log("hi");
     hideBlueBG();
 }
 
 console.log("Brightspace Quiz Review is active.");
+
 browser.runtime.onMessage.addListener((message) => {
-    if(message.command === "hideAnswers") {
+    if(message.command === "hide-answers") {
         hideAnswers();
     }
 });

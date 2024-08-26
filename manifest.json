@@ -14,7 +14,8 @@
       "matches": ["*://*/*"],
       "include_globs": [
         "*://brightspace.*/*"
-      ]
+      ],
+      "js": [ "./content_scripts/main.js" ]
     }
   ],
 
@@ -23,6 +24,6 @@
   "browser_action": {
     "default_icon": "icons/border-48.png",
     "default_title": "Brightspace Quiz Reviewer",
-    "default_popup": "popup/bqr_menu.html"
+    "default_popup": "popup/popup.html"
   }
 }
