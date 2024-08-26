@@ -1,4 +1,5 @@
 const ROW_ITEMS_CLASS = ".d2l-rowshadeonhover-selected-static";
+const RADIO_CLASS = ".d2l-radio"
 
 // hides the blue background behind selected answers
 function hideBlueBG() {
@@ -8,8 +9,16 @@ function hideBlueBG() {
     });
 }
 
+// unchecks the radio buttons
+function uncheckRadio() {
+    document.querySelectorAll(RADIO_CLASS).forEach((elem) => {
+        elem.style.background = "none"
+    });
+}
+
 function hideAnswers() {
     hideBlueBG();
+    uncheckRadio();
 }
 
 console.log("Brightspace Quiz Review is active.");
